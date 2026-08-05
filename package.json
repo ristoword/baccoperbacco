@@ -1,0 +1,20 @@
+{
+  "name": "bacco-perbacco",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bacco Perbacco — Trattoria Italiana (Express + React/Vite)",
+  "scripts": {
+    "dev": "concurrently -n api,web -c magenta,cyan \"npm run dev --prefix backend\" \"npm run dev --prefix src\"",
+    "dev:backend": "npm run dev --prefix backend",
+    "dev:frontend": "npm run dev --prefix src",
+    "build": "npm run build --prefix src",
+    "start": "npm run start --prefix backend",
+    "install:all": "npm install && npm install --prefix backend && npm install --prefix src"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
