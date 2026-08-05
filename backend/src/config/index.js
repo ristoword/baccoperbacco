@@ -9,7 +9,7 @@ dotenv.config();
 const config = {
   env: process.env.NODE_ENV || 'development',
   port: Number(process.env.PORT) || 5000,
-  clientUrl: process.env.CLIENT_URL || 'http://localhost:5173',
+  clientUrl: process.env.CLIENT_URL || (process.env.NODE_ENV === 'production' ? '*' : 'http://localhost:5173'),
   restaurant: {
     name: 'Bacco Perbacco',
     tagline: 'Trattoria Italiana',
