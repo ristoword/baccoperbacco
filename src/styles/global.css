@@ -189,7 +189,29 @@ button {
   font-size: clamp(0.95rem, 1.8vw, 1.125rem);
   line-height: 1.55;
   color: var(--cream-muted);
-  margin-bottom: clamp(1.5rem, 3.5vw, 2.25rem);
+  margin-bottom: 1rem;
+}
+
+.home__sedi {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: clamp(1.35rem, 3.2vw, 2rem);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: 0.04em;
+  color: var(--rose);
+}
+
+.home__sedi a {
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.25s var(--ease-out), color 0.25s var(--ease-out);
+}
+
+.home__sedi a:hover {
+  border-bottom-color: var(--rose);
+  color: var(--cream);
 }
 
 .home__actions {
@@ -460,6 +482,14 @@ button {
   font-family: var(--font-display);
   font-weight: 500;
   font-size: clamp(1.6rem, 3vw, 2.1rem);
+}
+
+.location__highlight {
+  margin-bottom: 0.85rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--rose);
 }
 
 .location__summary {
@@ -761,6 +791,120 @@ button {
   color: var(--rose);
 }
 
+.site-footer__sedi {
+  margin-top: 0.65rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--cream);
+}
+
+.site-footer__sedi a:hover {
+  color: var(--rose);
+}
+
+.page__panel--wide {
+  max-width: 58rem;
+}
+
+.sedi-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.sede-card {
+  text-align: left;
+  padding: 1.5rem 1.35rem;
+  border: 1px solid rgba(244, 239, 230, 0.14);
+  background: rgba(244, 239, 230, 0.03);
+  color: inherit;
+  transition:
+    border-color 0.3s var(--ease-out),
+    background-color 0.3s var(--ease-out),
+    transform 0.3s var(--ease-out);
+}
+
+.sede-card:hover {
+  border-color: rgba(160, 77, 108, 0.55);
+  transform: translateY(-2px);
+}
+
+.sede-card.is-active {
+  border-color: var(--wine-glow);
+  background: rgba(122, 51, 79, 0.18);
+}
+
+.sede-card__number {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.14em;
+  color: var(--wine-glow);
+  margin-bottom: 0.45rem;
+}
+
+.sede-card h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 2rem;
+  margin-bottom: 0.55rem;
+}
+
+.sede-card p {
+  font-weight: 300;
+  color: var(--cream-muted);
+  line-height: 1.55;
+  margin-bottom: 1rem;
+}
+
+.sede-card__hours {
+  display: grid;
+  gap: 0.3rem;
+  margin-bottom: 1.1rem !important;
+  font-size: 0.92rem !important;
+}
+
+.sede-card__hours span {
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--wine-glow);
+}
+
+.sede-card__cta {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--rose);
+}
+
+.sede-selected {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--cream);
+}
+
+.page__back {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.page__back a {
+  color: var(--cream-muted);
+  border-bottom: 1px solid rgba(244, 239, 230, 0.25);
+}
+
+.page__back a:hover {
+  color: var(--cream);
+}
+
 /* ─── Inner pages ─── */
 
 .page {
@@ -984,7 +1128,8 @@ button {
     gap: 0.25rem 0.7rem;
   }
 
-  .menu-grid {
+  .menu-grid,
+  .sedi-grid {
     grid-template-columns: 1fr;
   }
 }

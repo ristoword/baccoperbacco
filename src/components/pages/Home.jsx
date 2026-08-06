@@ -60,6 +60,7 @@ const FALLBACK = {
         detail:
           'Deze vestiging voelt klassiek en uitnodigend aan. Ideaal voor gasten die willen genieten van authentieke Italiaanse gerechten, goede wijn en een rustige, persoonlijke ambiance.',
         hours: 'Ma - do: 17:00 - 22:00 · Vr - zo: 12:00 - 15:00 & 17:00 - 22:00',
+        highlight: 'Lunch in het weekend · elegant dineren',
         points: [
           'Weekendlunch en diner in een warme setting',
           'Authentieke Italiaanse keuken met klassieke flair',
@@ -77,6 +78,7 @@ const FALLBACK = {
         detail:
           'De vestiging in Leiden heeft dezelfde ziel als Den Haag, maar met een meer avondgerichte dynamiek. Hier draait alles om een sfeervolle, authentieke dinerervaring.',
         hours: 'Ma: gesloten · Di - zo: 17:00 - 22:00',
+        highlight: 'Intieme avondbeleving · warme sfeer',
         points: [
           'Gericht op sfeervol dineren in de avond',
           'Zelfde kwaliteit en warmte, met eigen karakter',
@@ -149,6 +151,11 @@ export default function Home() {
               Authentieke Italiaanse keuken in een <em>warme</em> familiesfeer
             </h1>
             <p className="home__lead">{content.description}</p>
+            <p className="home__sedi">
+              <a href="#vestigingen">Den Haag</a>
+              <span aria-hidden="true">·</span>
+              <a href="#vestigingen">Leiden</a>
+            </p>
             <div className="home__actions">
               <Link className="btn btn--primary" to="/reserveren">
                 Reserveren
@@ -238,6 +245,9 @@ export default function Home() {
                 <span className="location__number">{loc.number}</span>
                 <h3 className="location__name">{loc.name}</h3>
               </div>
+              {loc.highlight ? (
+                <p className="location__highlight">{loc.highlight}</p>
+              ) : null}
               <p className="location__summary">{loc.summary}</p>
               <p className="location__detail">{loc.detail}</p>
               <p className="location__hours">
@@ -249,7 +259,10 @@ export default function Home() {
                   <li key={point}>{point}</li>
                 ))}
               </ul>
-              <Link className="btn btn--primary" to="/reserveren">
+              <Link
+                className="btn btn--primary"
+                to={`/reserveren?sede=${loc.id}`}
+              >
                 {loc.reserveLabel}
               </Link>
             </article>
@@ -265,11 +278,11 @@ export default function Home() {
           </h2>
           <p className="reserve__text">{reserve.text}</p>
           <div className="home__actions">
-            <Link className="btn btn--primary" to="/reserveren">
-              Reserveren
+            <Link className="btn btn--primary" to="/reserveren?sede=den-haag">
+              Reserveer Den Haag
             </Link>
-            <Link className="btn btn--ghost" to="/feedback">
-              Feedback
+            <Link className="btn btn--ghost" to="/reserveren?sede=leiden">
+              Reserveer Leiden
             </Link>
           </div>
         </div>

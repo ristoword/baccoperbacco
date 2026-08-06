@@ -51,11 +51,13 @@ const restaurant = {
         id: 'den-haag',
         number: '01',
         name: 'Den Haag',
+        city: 'Den Haag',
         summary:
           'In Den Haag beleef je Bacco Perbacco in een warme en elegante setting die perfect is voor lunch in het weekend en sfeervol dineren in de avond.',
         detail:
           'Deze vestiging voelt klassiek en uitnodigend aan. Ideaal voor gasten die willen genieten van authentieke Italiaanse gerechten, goede wijn en een rustige, persoonlijke ambiance.',
         hours: 'Ma - do: 17:00 - 22:00 · Vr - zo: 12:00 - 15:00 & 17:00 - 22:00',
+        highlight: 'Lunch in het weekend · elegant dineren',
         points: [
           'Weekendlunch en diner in een warme setting',
           'Authentieke Italiaanse keuken met klassieke flair',
@@ -68,11 +70,13 @@ const restaurant = {
         id: 'leiden',
         number: '02',
         name: 'Leiden',
+        city: 'Leiden',
         summary:
           'In Leiden staat de avond centraal: intiem, warm en gastvrij. Een plek voor diners waar de tijd even vertraagt en Italië voelbaar dichtbij komt.',
         detail:
           'De vestiging in Leiden heeft dezelfde ziel als Den Haag, maar met een meer avondgerichte dynamiek. Hier draait alles om een sfeervolle, authentieke dinerervaring.',
         hours: 'Ma: gesloten · Di - zo: 17:00 - 22:00',
+        highlight: 'Intieme avondbeleving · warme sfeer',
         points: [
           'Gericht op sfeervol dineren in de avond',
           'Zelfde kwaliteit en warmte, met eigen karakter',
