@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
+import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import config from './config/index.js';
@@ -12,6 +13,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, '../..');
 const distDir = path.join(rootDir, 'dist');
 const publicDir = path.join(rootDir, 'public');
+const hasDist = fs.existsSync(path.join(distDir, 'index.html'));
 
 const app = express();
 
@@ -31,7 +33,7 @@ app.use('/assets', express.static(path.join(publicDir, 'assets')));
 
 app.use('/api', routes);
 
-if (config.env === 'production') {
+if (hasDist) {
   app.use(express.static(distDir));
 
   app.get('*', (req, res, next) => {
