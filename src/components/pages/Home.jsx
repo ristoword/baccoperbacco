@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import logo from '../../assets/images/logo-bacco-perbacco.png';
 import owners from '../../assets/images/proprietari-roberta-giuseppe.png';
+import heroCoast from '../../assets/images/hero-costa-italiana.jpg';
 import { useLanguage } from '../../i18n/LanguageContext.jsx';
 
 export default function Home() {
@@ -16,11 +17,6 @@ export default function Home() {
       detail: t('home.denHaagDetail'),
       hours: t('home.denHaagHours'),
       reserveLabel: t('home.reserveDenHaag'),
-      points: [
-        t('home.denHaagHighlight'),
-        t('home.tag1'),
-        t('home.tag2'),
-      ],
     },
     {
       id: 'leiden',
@@ -31,11 +27,6 @@ export default function Home() {
       detail: t('home.leidenDetail'),
       hours: t('home.leidenHours'),
       reserveLabel: t('home.reserveLeiden'),
-      points: [
-        t('home.leidenHighlight'),
-        t('home.tag1'),
-        t('home.tag2'),
-      ],
     },
   ];
 
@@ -43,6 +34,10 @@ export default function Home() {
     <main>
       <section className="home" aria-label="Bacco Perbacco">
         <div className="home__atmosphere" aria-hidden="true">
+          <div
+            className="home__photo"
+            style={{ backgroundImage: `url(${heroCoast})` }}
+          />
           <div className="home__wash" />
           <div className="home__grain" />
           <div className="home__light" />

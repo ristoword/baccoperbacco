@@ -78,14 +78,29 @@ button {
   z-index: 0;
 }
 
+.home__photo {
+  position: absolute;
+  inset: 0;
+  background-position: center 40%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: scale(1.04);
+  animation: photo-ken 28s ease-in-out infinite alternate;
+  filter: saturate(1.05) contrast(1.02);
+}
+
 .home__wash {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 95% 75% at 50% 22%, rgba(122, 51, 79, 0.38) 0%, transparent 58%),
-    radial-gradient(ellipse 55% 45% at 12% 88%, rgba(92, 39, 64, 0.32) 0%, transparent 55%),
-    radial-gradient(ellipse 48% 40% at 90% 72%, rgba(160, 77, 108, 0.2) 0%, transparent 52%),
-    linear-gradient(165deg, #2a2127 0%, #1c1619 42%, #231b20 100%);
+    linear-gradient(
+      180deg,
+      rgba(28, 22, 25, 0.55) 0%,
+      rgba(28, 22, 25, 0.42) 35%,
+      rgba(22, 18, 22, 0.72) 70%,
+      rgba(22, 18, 22, 0.88) 100%
+    ),
+    radial-gradient(ellipse 90% 70% at 50% 20%, rgba(122, 51, 79, 0.28) 0%, transparent 58%);
   animation: wash-breathe 14s ease-in-out infinite alternate;
 }
 
@@ -101,7 +116,7 @@ button {
 .home__vignette {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 72% 68% at 50% 40%, transparent 40%, rgba(22, 18, 22, 0.55) 100%);
+  background: radial-gradient(ellipse 75% 70% at 50% 38%, transparent 30%, rgba(22, 18, 22, 0.58) 100%);
 }
 
 .home__light {
@@ -114,7 +129,7 @@ button {
   left: 50%;
   translate: -50% 0;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(244, 239, 230, 0.1) 0%, rgba(160, 77, 108, 0.08) 42%, transparent 70%);
+  background: radial-gradient(circle, rgba(244, 239, 230, 0.08) 0%, rgba(160, 77, 108, 0.06) 42%, transparent 70%);
   animation: light-drift 16s var(--ease-out) infinite alternate;
 }
 
@@ -602,6 +617,15 @@ button {
   }
 }
 
+@keyframes photo-ken {
+  from {
+    transform: scale(1.04) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.1) translate3d(0, -1.5%, 0);
+  }
+}
+
 @keyframes logo-float {
   0%,
   100% {
@@ -679,6 +703,7 @@ button {
 @media (prefers-reduced-motion: reduce) {
   .home__wash,
   .home__light,
+  .home__photo,
   .home__brand,
   .home__brand-aura,
   .home__brand img,
