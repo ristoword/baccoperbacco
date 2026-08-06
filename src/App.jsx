@@ -5,6 +5,7 @@ import Reserve from './components/pages/Reserve.jsx';
 import Menu from './components/pages/Menu.jsx';
 import Forum from './components/pages/Forum.jsx';
 import Feedback from './components/pages/Feedback.jsx';
+import Events from './components/pages/Events.jsx';
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
           <Route path="/menu" element={<Menu />} />
           <Route path="/forum" element={<Forum />} />
           <Route path="/feedback" element={<Feedback />} />
+          <Route path="/events" element={<Events />} />
         </Route>
       </Routes>
     </BrowserRouter>

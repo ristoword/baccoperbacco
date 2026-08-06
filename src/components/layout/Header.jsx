@@ -4,6 +4,7 @@ import logo from '../../assets/images/logo-bacco-perbacco.png';
 const links = [
   { to: '/', label: 'Home', end: true },
   { to: '/menu', label: 'Onze gerechten' },
+  { to: '/events', label: 'Events' },
   { to: '/reserveren', label: 'Reserveren' },
   { to: '/forum', label: 'Forum' },
   { to: '/feedback', label: 'Feedback' },
