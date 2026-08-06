@@ -13,6 +13,7 @@ export default function Header() {
   const links = [
     { to: '/', label: t('nav.home'), end: true },
     { to: '/menu', label: t('nav.menu') },
+    { to: '/foto', label: t('nav.photos') },
     { to: '/events', label: t('nav.events') },
     { to: '/reserveren', label: t('nav.reserve') },
     { to: '/forum', label: t('nav.forum') },

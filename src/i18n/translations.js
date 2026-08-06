@@ -9,6 +9,7 @@ export const translations = {
     nav: {
       home: 'Home',
       menu: 'Onze gerechten',
+      photos: 'Foto',
       events: 'Events',
       reserve: 'Reserveren',
       forum: 'Forum',
@@ -100,9 +101,15 @@ export const translations = {
     },
     menu: {
       title: 'Onze gerechten',
-      text: 'De volledige menukaart met seizoensgerechten volgt hier. Dit is een eerste opzet — work in progress.',
+      text: 'Klassieke Italiaanse smaken met een elegante, huiselijke signatuur.',
+      seePhotos: 'Bekijk de foto’s',
       soon: 'binnenkort',
       wip: 'Work in progress',
+    },
+    photos: {
+      eyebrow: 'Galerij',
+      title: 'Foto van onze gerechten',
+      text: 'Elegante fine dining presentaties van elk gerecht op onze kaart.',
     },
     events: {
       eyebrow: 'Agenda',
@@ -205,6 +212,7 @@ export const translations = {
     nav: {
       home: 'Home',
       menu: 'Our dishes',
+      photos: 'Photos',
       events: 'Events',
       reserve: 'Reserve',
       forum: 'Forum',
@@ -296,9 +304,15 @@ export const translations = {
     },
     menu: {
       title: 'Our dishes',
-      text: 'The full seasonal menu will appear here. This is a first outline — work in progress.',
+      text: 'Classic Italian flavours with an elegant, homely signature.',
+      seePhotos: 'See the photos',
       soon: 'coming soon',
       wip: 'Work in progress',
+    },
+    photos: {
+      eyebrow: 'Gallery',
+      title: 'Photos of our dishes',
+      text: 'Elegant fine dining presentations of every dish on our menu.',
     },
     events: {
       eyebrow: 'Agenda',
@@ -401,6 +415,7 @@ export const translations = {
     nav: {
       home: 'Home',
       menu: 'I nostri piatti',
+      photos: 'Foto',
       events: 'Eventi',
       reserve: 'Prenota',
       forum: 'Forum',
@@ -492,9 +507,15 @@ export const translations = {
     },
     menu: {
       title: 'I nostri piatti',
-      text: 'Il menu completo di stagione apparirà qui. Questa è una prima bozza — work in progress.',
+      text: 'Sapori italiani classici con una firma elegante e casalinga.',
+      seePhotos: 'Guarda le foto',
       soon: 'a breve',
       wip: 'Work in progress',
+    },
+    photos: {
+      eyebrow: 'Galleria',
+      title: 'Foto dei nostri piatti',
+      text: 'Presentazioni eleganti di fine dining per ogni piatto della carta.',
     },
     events: {
       eyebrow: 'Agenda',
