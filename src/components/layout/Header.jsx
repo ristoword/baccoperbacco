@@ -36,6 +36,25 @@ export default function Header() {
           <span>Bacco Perbacco</span>
         </Link>
 
+        <nav
+          id="site-nav"
+          className={open ? 'site-header__nav is-open' : 'site-header__nav'}
+          aria-label={t('nav.aria')}
+        >
+          {links.map((link) => (
+            <NavLink
+              key={link.to}
+              to={link.to}
+              end={link.end}
+              className={({ isActive }) =>
+                isActive ? 'site-header__link is-active' : 'site-header__link'
+              }
+            >
+              {link.label}
+            </NavLink>
+          ))}
+        </nav>
+
         <div className="site-header__tools">
           <div className="lang-switch" role="group" aria-label="Language">
             {langs.map((item) => (
@@ -65,25 +84,6 @@ export default function Header() {
             <span />
           </button>
         </div>
-
-        <nav
-          id="site-nav"
-          className={open ? 'site-header__nav is-open' : 'site-header__nav'}
-          aria-label={t('nav.aria')}
-        >
-          {links.map((link) => (
-            <NavLink
-              key={link.to}
-              to={link.to}
-              end={link.end}
-              className={({ isActive }) =>
-                isActive ? 'site-header__link is-active' : 'site-header__link'
-              }
-            >
-              {link.label}
-            </NavLink>
-          ))}
-        </nav>
       </div>
     </header>
   );
