@@ -1,88 +1,60 @@
-import WipBanner from '../common/WipBanner.jsx';
+import { Link } from 'react-router-dom';
+import flyer from '../../assets/images/event-salotto-tango.png';
 import { useLanguage } from '../../i18n/LanguageContext.jsx';
 
-const events = [
-  {
-    date: '2026-08-15',
-    day: '15',
-    month: { nl: 'Aug', en: 'Aug', it: 'Ago' },
-    title: {
-      nl: 'Avond van de Italiaanse wijnen',
-      en: 'Italian wine evening',
-      it: 'Serata dei vini italiani',
-    },
-    placeKey: 'denHaag',
-    note: {
-      nl: 'Proeverij met gerechten van het huis — details volgen.',
-      en: 'Tasting with house dishes — details coming soon.',
-      it: 'Degustazione con piatti della casa — dettagli a breve.',
-    },
-  },
-  {
-    date: '2026-09-06',
-    day: '06',
-    month: { nl: 'Sep', en: 'Sep', it: 'Set' },
-    title: {
-      nl: 'Familiediner & live muziek',
-      en: 'Family dinner & live music',
-      it: 'Cena di famiglia & musica dal vivo',
-    },
-    placeKey: 'leiden',
-    note: {
-      nl: 'Een avond met warme sfeer aan tafel. Work in progress.',
-      en: 'An evening with warm table atmosphere. Work in progress.',
-      it: 'Una sera con atmosfera calda a tavola. Work in progress.',
-    },
-  },
-  {
-    date: '2026-09-20',
-    day: '20',
-    month: { nl: 'Sep', en: 'Sep', it: 'Set' },
-    title: {
-      nl: 'Pasta workshop',
-      en: 'Pasta workshop',
-      it: 'Workshop di pasta',
-    },
-    placeKey: 'denHaag',
-    note: {
-      nl: 'Leer verse pasta maken met Giuseppe. Reserveren volgt later.',
-      en: 'Learn fresh pasta with Giuseppe. Booking comes later.',
-      it: 'Impara la pasta fresca con Giuseppe. Prenotazioni più avanti.',
-    },
-  },
-];
-
 export default function Events() {
-  const { t, lang } = useLanguage();
+  const { t } = useLanguage();
 
   return (
     <main className="page">
-      <section className="page__panel">
-        <WipBanner
-          title={t('events.title')}
-          text={t('events.text')}
-          badge={t('events.wip')}
-        />
-
-        <div className="events-list">
-          {events.map((event) => (
-            <article key={event.date + event.title.en} className="event-item">
-              <time className="event-item__date" dateTime={event.date}>
-                <span className="event-item__day">{event.day}</span>
-                <span className="event-item__month">
-                  {event.month[lang] || event.month.en}
-                </span>
-              </time>
-              <div className="event-item__body">
-                <p className="event-item__place">
-                  {t(`common.${event.placeKey === 'leiden' ? 'leiden' : 'denHaag'}`)}
-                </p>
-                <h2>{event.title[lang] || event.title.en}</h2>
-                <p>{event.note[lang] || event.note.en}</p>
-              </div>
-            </article>
-          ))}
+      <section className="page__panel page__panel--wide">
+        <div className="page-hero">
+          <p className="eyebrow">{t('events.eyebrow')}</p>
+          <h1 className="wip__title">{t('events.title')}</h1>
+          <p className="wip__text">{t('events.text')}</p>
         </div>
+
+        <article className="event-featured">
+          <div className="event-featured__media">
+            <img
+              src={flyer}
+              alt={t('events.tango.alt')}
+              width={900}
+              height={1200}
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+
+          <div className="event-featured__copy">
+            <p className="event-featured__kicker">{t('events.tango.kicker')}</p>
+            <p className="event-featured__date">{t('events.tango.dateLine')}</p>
+            <h2>{t('events.tango.title')}</h2>
+            <p className="event-featured__slogan">{t('events.tango.slogan')}</p>
+            <p className="event-featured__lead">{t('events.tango.lead')}</p>
+            <p>{t('events.tango.body')}</p>
+
+            <ul className="event-featured__meta">
+              <li>
+                <span>{t('events.tango.whenLabel')}</span>
+                {t('events.tango.when')}
+              </li>
+              <li>
+                <span>{t('events.tango.whereLabel')}</span>
+                {t('events.tango.where')}
+              </li>
+              <li>
+                <span>{t('events.tango.priceLabel')}</span>
+                {t('events.tango.price')}
+              </li>
+            </ul>
+
+            <p className="event-featured__tags">{t('events.tango.tags')}</p>
+            <Link className="btn btn--primary" to="/reserveren?sede=leiden">
+              {t('events.tango.cta')}
+            </Link>
+          </div>
+        </article>
       </section>
     </main>
   );

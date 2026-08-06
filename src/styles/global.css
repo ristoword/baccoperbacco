@@ -1321,10 +1321,111 @@ button {
   line-height: 1.55;
 }
 
-.events-list {
+.event-featured {
   display: grid;
-  gap: 0;
+  grid-template-columns: minmax(240px, 0.9fr) 1.1fr;
+  gap: clamp(1.5rem, 4vw, 2.75rem);
+  align-items: start;
   margin-top: 0.5rem;
+  text-align: left;
+}
+
+.event-featured__media {
+  overflow: hidden;
+  border: 1px solid rgba(244, 239, 230, 0.12);
+  background: rgba(244, 239, 230, 0.03);
+}
+
+.event-featured__media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.event-featured__kicker {
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--wine-glow);
+  margin-bottom: 0.55rem;
+}
+
+.event-featured__date {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 3vw, 1.8rem);
+  color: var(--rose);
+  margin-bottom: 0.35rem;
+}
+
+.event-featured__copy h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(2rem, 4.5vw, 2.8rem);
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+}
+
+.event-featured__slogan {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+  color: var(--cream);
+  margin-bottom: 1rem;
+}
+
+.event-featured__lead {
+  font-weight: 400;
+  color: var(--cream);
+  line-height: 1.6;
+  margin-bottom: 0.85rem;
+}
+
+.event-featured__copy > p {
+  font-weight: 300;
+  color: var(--cream-muted);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+
+.event-featured__meta {
+  list-style: none;
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.event-featured__meta li {
+  display: grid;
+  gap: 0.2rem;
+  font-weight: 300;
+  color: var(--cream-muted);
+  line-height: 1.45;
+}
+
+.event-featured__meta span {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--wine-glow);
+}
+
+.event-featured__tags {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cream-faint);
+  margin-bottom: 1.5rem !important;
+}
+
+@media (max-width: 900px) {
+  .event-featured {
+    grid-template-columns: 1fr;
+  }
+
+  .event-featured__media {
+    max-width: 28rem;
+    margin-inline: auto;
+  }
 }
 
 .event-item {
