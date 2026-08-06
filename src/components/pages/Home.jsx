@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../../assets/images/logo-bacco-perbacco.png';
 import owners from '../../assets/images/proprietari-roberta-giuseppe.png';
 
@@ -118,7 +119,7 @@ export default function Home() {
     };
   }, []);
 
-  const { story, hospitality, philosophy, locations, reserve, cta } = content;
+  const { story, hospitality, philosophy, locations, reserve } = content;
 
   return (
     <main>
@@ -132,6 +133,7 @@ export default function Home() {
 
         <div className="home__stage">
           <div className="home__brand">
+            <div className="home__brand-aura" aria-hidden="true" />
             <img
               src={logo}
               alt={`${content.name} — ${content.tagline}`}
@@ -148,22 +150,12 @@ export default function Home() {
             </h1>
             <p className="home__lead">{content.description}</p>
             <div className="home__actions">
-              <a
-                className="btn btn--primary"
-                href={cta.primary.href}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {cta.primary.label}
-              </a>
-              <a
-                className="btn btn--ghost"
-                href={cta.secondary.href}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {cta.secondary.label}
-              </a>
+              <Link className="btn btn--primary" to="/reserveren">
+                Reserveren
+              </Link>
+              <Link className="btn btn--ghost" to="/menu">
+                Onze gerechten
+              </Link>
             </div>
           </div>
         </div>
@@ -257,14 +249,9 @@ export default function Home() {
                   <li key={point}>{point}</li>
                 ))}
               </ul>
-              <a
-                className="btn btn--primary"
-                href={loc.reserveHref}
-                target="_blank"
-                rel="noreferrer"
-              >
+              <Link className="btn btn--primary" to="/reserveren">
                 {loc.reserveLabel}
-              </a>
+              </Link>
             </article>
           ))}
         </div>
@@ -278,22 +265,12 @@ export default function Home() {
           </h2>
           <p className="reserve__text">{reserve.text}</p>
           <div className="home__actions">
-            <a
-              className="btn btn--primary"
-              href={cta.primary.href}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {cta.primary.label}
-            </a>
-            <a
-              className="btn btn--ghost"
-              href={cta.secondary.href}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {cta.secondary.label}
-            </a>
+            <Link className="btn btn--primary" to="/reserveren">
+              Reserveren
+            </Link>
+            <Link className="btn btn--ghost" to="/feedback">
+              Feedback
+            </Link>
           </div>
         </div>
       </section>
