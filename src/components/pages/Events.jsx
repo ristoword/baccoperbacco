@@ -20,7 +20,7 @@ const EVENT_CARDS = [
   {
     key: 'stellato',
     flyer: flyerStellato,
-    sede: 'den-haag',
+    sede: 'leiden',
     loading: 'lazy',
   },
 ];
