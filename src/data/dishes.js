@@ -32,7 +32,7 @@ export const dishes = [
   },
   {
     id: 'tagliatelle',
-    name: 'Tagliatelle al ragù',
+    name: 'Spaghetti al ragù',
     course: { nl: 'Pasta & risotto', en: 'Pasta & risotto', it: 'Pasta & risotto' },
     image: tagliatelle,
   },
@@ -50,7 +50,7 @@ export const dishes = [
   },
   {
     id: 'saltimbocca',
-    name: 'Saltimbocca alla romana',
+    name: 'Scaloppine ai funghi',
     course: { nl: 'Secondi', en: 'Mains', it: 'Secondi' },
     image: saltimbocca,
   },
@@ -62,7 +62,7 @@ export const dishes = [
   },
   {
     id: 'scaloppine',
-    name: 'Scaloppine al limone',
+    name: 'Pollo al limone',
     course: { nl: 'Secondi', en: 'Mains', it: 'Secondi' },
     image: scaloppine,
   },
