@@ -1,37 +1,42 @@
 import { Link, useSearchParams } from 'react-router-dom';
 import WipBanner from '../common/WipBanner.jsx';
-
-const sedi = [
-  {
-    id: 'den-haag',
-    name: 'Den Haag',
-    number: '01',
-    text: 'Warme, elegante setting — ideaal voor weekendlunch en sfeervol dineren.',
-    hours: 'Ma - do: 17:00 - 22:00 · Vr - zo: 12:00 - 15:00 & 17:00 - 22:00',
-  },
-  {
-    id: 'leiden',
-    name: 'Leiden',
-    number: '02',
-    text: 'Intieme avondbeleving — rustig, gastvrij en authentiek Italiaans.',
-    hours: 'Ma: gesloten · Di - zo: 17:00 - 22:00',
-  },
-];
+import { useLanguage } from '../../i18n/LanguageContext.jsx';
 
 export default function Reserve() {
+  const { t } = useLanguage();
   const [params, setParams] = useSearchParams();
   const selected = params.get('sede') || '';
+
+  const sedi = [
+    {
+      id: 'den-haag',
+      name: t('common.denHaag'),
+      number: '01',
+      text: t('reserve.denHaagText'),
+      hours: t('home.denHaagHours'),
+    },
+    {
+      id: 'leiden',
+      name: t('common.leiden'),
+      number: '02',
+      text: t('reserve.leidenText'),
+      hours: t('home.leidenHours'),
+    },
+  ];
 
   function chooseSede(id) {
     setParams({ sede: id });
   }
 
+  const selectedName = sedi.find((s) => s.id === selected)?.name;
+
   return (
     <main className="page">
       <section className="page__panel page__panel--wide">
         <WipBanner
-          title="Reserveren"
-          text="Kies eerst je vestiging: Den Haag of Leiden. Het complete reserveringssysteem volgt binnenkort — work in progress."
+          title={t('reserve.title')}
+          text={t('reserve.text')}
+          badge={t('reserve.wip')}
         />
 
         <div className="sedi-grid">
@@ -48,11 +53,11 @@ export default function Reserve() {
                 <h2>{sede.name}</h2>
                 <p>{sede.text}</p>
                 <p className="sede-card__hours">
-                  <span>Openingstijden</span>
+                  <span>{t('common.openingHours')}</span>
                   {sede.hours}
                 </p>
                 <span className="sede-card__cta">
-                  {active ? 'Geselecteerd' : `Kies ${sede.name}`}
+                  {active ? t('reserve.selected') : `${t('reserve.choose')} ${sede.name}`}
                 </span>
               </button>
             );
@@ -62,35 +67,34 @@ export default function Reserve() {
         <div className="page__preview">
           <p className="sede-selected">
             {selected
-              ? `Vestiging: ${sedi.find((s) => s.id === selected)?.name}`
-              : 'Selecteer Den Haag of Leiden om verder te gaan.'}
+              ? `${t('reserve.venue')}: ${selectedName}`
+              : t('reserve.pickFirst')}
           </p>
 
           <div className="form-ghost">
             <label>
-              Datum
+              {t('reserve.date')}
               <input type="date" disabled />
             </label>
             <label>
-              Tijd
+              {t('reserve.time')}
               <input type="time" disabled />
             </label>
             <label>
-              Personen
+              {t('reserve.people')}
               <input type="number" disabled placeholder="2" />
             </label>
             <label>
-              Naam
-              <input type="text" disabled placeholder="Jouw naam" />
+              {t('reserve.name')}
+              <input type="text" disabled />
             </label>
             <button className="btn btn--primary" type="button" disabled>
-              Reserveer {selected ? sedi.find((s) => s.id === selected)?.name : ''}{' '}
-              (binnenkort)
+              {t('reserve.title')} {selectedName || ''} ({t('reserve.soon')})
             </button>
           </div>
 
           <p className="page__back">
-            <Link to="/#vestigingen">Bekijk de vestigingen op de homepage</Link>
+            <Link to="/#vestigingen">{t('reserve.seeHome')}</Link>
           </p>
         </div>
       </section>

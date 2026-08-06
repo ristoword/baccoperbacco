@@ -1,6 +1,8 @@
 import { Router } from 'express';
 import config from '../config/index.js';
 import restaurant from '../data/restaurant.js';
+import forumRoutes from './forum.routes.js';
+import feedbackRoutes from './feedback.routes.js';
 
 const router = Router();
 
@@ -19,5 +21,8 @@ router.get('/restaurant', (_req, res) => {
     data: restaurant,
   });
 });
+
+router.use('/forum', forumRoutes);
+router.use('/feedback', feedbackRoutes);
 
 export default router;

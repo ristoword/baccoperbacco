@@ -10,4 +10,5 @@ public/uploads/*
 !public/uploads/.gitkeep
 coverage/
 .vite/
-*.local
+backend/data/*.json
+!backend/data/.gitkeep

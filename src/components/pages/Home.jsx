@@ -1,127 +1,43 @@
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/images/logo-bacco-perbacco.png';
 import owners from '../../assets/images/proprietari-roberta-giuseppe.png';
-
-const FALLBACK = {
-  name: 'Bacco Perbacco',
-  tagline: 'Trattoria Italiana',
-  headline: 'Authentieke Italiaanse keuken',
-  description:
-    'Authentieke Italiaanse keuken in een warme familiesfeer, waar traditie, gastvrijheid en de smaken van thuis samenkomen in Den Haag en Leiden.',
-  cta: {
-    primary: {
-      label: 'Reserveren voor Den Haag',
-      href: 'https://baccoperbacco.nl/Italiaans-restaurant-den-haag',
-    },
-    secondary: {
-      label: 'Reserveren voor Leiden',
-      href: 'https://baccoperbacco.nl/italiaans-restaurant-leiden',
-    },
-  },
-  story: {
-    eyebrow: 'Ons verhaal',
-    title: 'Een Italiaans familieverhaal met hart',
-    owners: 'Roberta & Giuseppe',
-    paragraphs: [
-      'Wij zijn Roberta en Giuseppe, een Italiaans koppel verbonden door onze passie voor traditioneel koken en de authentieke smaken van thuis.',
-      'In 2025 kregen wij de kans om Bacco Perbacco over te nemen, een Italiaans restaurant dat in 2009 is opgericht. Wij kozen ervoor om de identiteit van het restaurant voort te zetten en die te verrijken met een persoonlijkere touch.',
-      'Bij ons draait alles om oprechte gastvrijheid, huiselijke gerechten en de warmte van familie. Bacco Perbacco is een plek waar gasten zich welkom voelen, waar samen eten centraal staat en waar iedere maaltijd met liefde wordt bereid.',
-    ],
-  },
-  hospitality: {
-    eyebrow: 'Familie restaurant',
-    title: 'Italiaanse gastvrijheid met karakter',
-    paragraphs: [
-      'Bacco Perbacco is meer dan een restaurant. Het is een familieplek waar de tafel centraal staat, waar gerechten met aandacht worden bereid en waar iedere gast de warmte van Italië voelt.',
-      'De sfeer is stijlvol, warm en tijdloos. Geen afstandelijke luxe, maar een persoonlijke beleving waarin familie, smaak en gastvrijheid samenkomen.',
-      'Roberta en Giuseppe brengen met liefde een keuken die geworteld is in traditie. Eerlijk, puur en gemaakt om samen van te genieten.',
-    ],
-    tags: ['Italiaanse beleving', 'Warm & huiselijk'],
-  },
-  philosophy: {
-    eyebrow: 'Onze filosofie',
-    quote:
-      'Echte Italiaanse keuken is eenvoudig, oprecht en vol herinneringen aan thuis.',
-    text: 'Op onze menukaart vind je gerechten die geïnspireerd zijn op de regionale keukens van Italië: pure ingrediënten, huiselijke smaken en recepten die verhalen vertellen. Dat is de ziel van Bacco Perbacco.',
-  },
-  locations: {
-    eyebrow: 'Onze vestigingen',
-    title: 'Twee locaties, één Italiaanse familie',
-    intro:
-      'Beide vestigingen delen dezelfde warme signatuur, maar hebben ieder een eigen ritme en beleving. Overal staat dezelfde gastvrijheid centraal: eten, delen en samen genieten.',
-    items: [
-      {
-        id: 'den-haag',
-        number: '01',
-        name: 'Den Haag',
-        summary:
-          'In Den Haag beleef je Bacco Perbacco in een warme en elegante setting die perfect is voor lunch in het weekend en sfeervol dineren in de avond.',
-        detail:
-          'Deze vestiging voelt klassiek en uitnodigend aan. Ideaal voor gasten die willen genieten van authentieke Italiaanse gerechten, goede wijn en een rustige, persoonlijke ambiance.',
-        hours: 'Ma - do: 17:00 - 22:00 · Vr - zo: 12:00 - 15:00 & 17:00 - 22:00',
-        highlight: 'Lunch in het weekend · elegant dineren',
-        points: [
-          'Weekendlunch en diner in een warme setting',
-          'Authentieke Italiaanse keuken met klassieke flair',
-          'Een locatie met rust, karakter en persoonlijke service',
-        ],
-        reserveHref: 'https://baccoperbacco.nl/Italiaans-restaurant-den-haag',
-        reserveLabel: 'Reserveer Den Haag',
-      },
-      {
-        id: 'leiden',
-        number: '02',
-        name: 'Leiden',
-        summary:
-          'In Leiden staat de avond centraal: intiem, warm en gastvrij. Een plek voor diners waar de tijd even vertraagt en Italië voelbaar dichtbij komt.',
-        detail:
-          'De vestiging in Leiden heeft dezelfde ziel als Den Haag, maar met een meer avondgerichte dynamiek. Hier draait alles om een sfeervolle, authentieke dinerervaring.',
-        hours: 'Ma: gesloten · Di - zo: 17:00 - 22:00',
-        highlight: 'Intieme avondbeleving · warme sfeer',
-        points: [
-          'Gericht op sfeervol dineren in de avond',
-          'Zelfde kwaliteit en warmte, met eigen karakter',
-          'Een rustige Italiaanse setting voor lange tafelmomenten',
-        ],
-        reserveHref: 'https://baccoperbacco.nl/italiaans-restaurant-leiden',
-        reserveLabel: 'Reserveer Leiden',
-      },
-    ],
-  },
-  reserve: {
-    eyebrow: 'Reserveer jouw tafel',
-    title: 'Kies je vestiging',
-    text: 'Reserveer direct bij de juiste locatie voor een warme Italiaanse lunch of een sfeervol diner met de gastvrijheid van Roberta en Giuseppe.',
-  },
-};
+import { useLanguage } from '../../i18n/LanguageContext.jsx';
 
 export default function Home() {
-  const [content, setContent] = useState(FALLBACK);
+  const { t } = useLanguage();
 
-  useEffect(() => {
-    let cancelled = false;
-
-    async function load() {
-      try {
-        const res = await fetch('/api/restaurant');
-        if (!res.ok) return;
-        const json = await res.json();
-        if (!cancelled && json?.data) {
-          setContent({ ...FALLBACK, ...json.data });
-        }
-      } catch {
-        // API offline: fallback locale
-      }
-    }
-
-    load();
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-
-  const { story, hospitality, philosophy, locations, reserve } = content;
+  const locations = [
+    {
+      id: 'den-haag',
+      number: '01',
+      name: t('common.denHaag'),
+      highlight: t('home.denHaagHighlight'),
+      summary: t('home.denHaagSummary'),
+      detail: t('home.denHaagDetail'),
+      hours: t('home.denHaagHours'),
+      reserveLabel: t('home.reserveDenHaag'),
+      points: [
+        t('home.denHaagHighlight'),
+        t('home.tag1'),
+        t('home.tag2'),
+      ],
+    },
+    {
+      id: 'leiden',
+      number: '02',
+      name: t('common.leiden'),
+      highlight: t('home.leidenHighlight'),
+      summary: t('home.leidenSummary'),
+      detail: t('home.leidenDetail'),
+      hours: t('home.leidenHours'),
+      reserveLabel: t('home.reserveLeiden'),
+      points: [
+        t('home.leidenHighlight'),
+        t('home.tag1'),
+        t('home.tag2'),
+      ],
+    },
+  ];
 
   return (
     <main>
@@ -138,7 +54,7 @@ export default function Home() {
             <div className="home__brand-aura" aria-hidden="true" />
             <img
               src={logo}
-              alt={`${content.name} — ${content.tagline}`}
+              alt="Bacco Perbacco — Trattoria Italiana"
               width={840}
               height={840}
               decoding="async"
@@ -148,27 +64,28 @@ export default function Home() {
 
           <div className="home__copy">
             <h1 className="home__headline">
-              Authentieke Italiaanse keuken in een <em>warme</em> familiesfeer
+              {t('home.headlineBefore')} <em>{t('home.headlineEm')}</em>{' '}
+              {t('home.headlineAfter')}
             </h1>
-            <p className="home__lead">{content.description}</p>
+            <p className="home__lead">{t('home.description')}</p>
             <p className="home__sedi">
-              <a href="#vestigingen">Den Haag</a>
+              <a href="#vestigingen">{t('common.denHaag')}</a>
               <span aria-hidden="true">·</span>
-              <a href="#vestigingen">Leiden</a>
+              <a href="#vestigingen">{t('common.leiden')}</a>
             </p>
             <div className="home__actions">
               <Link className="btn btn--primary" to="/reserveren">
-                Reserveren
+                {t('home.ctaReserve')}
               </Link>
               <Link className="btn btn--ghost" to="/menu">
-                Onze gerechten
+                {t('home.ctaMenu')}
               </Link>
             </div>
           </div>
         </div>
 
         <div className="home__scroll" aria-hidden="true">
-          <span>Scroll</span>
+          <span>{t('home.scroll')}</span>
           <div className="home__scroll-line" />
         </div>
       </section>
@@ -177,7 +94,7 @@ export default function Home() {
         <div className="story__media">
           <img
             src={owners}
-            alt="Roberta en Giuseppe, eigenaren van Bacco Perbacco"
+            alt="Roberta & Giuseppe"
             width={900}
             height={1100}
             loading="lazy"
@@ -185,34 +102,33 @@ export default function Home() {
           />
         </div>
         <div className="story__copy">
-          <p className="eyebrow">{story.eyebrow}</p>
+          <p className="eyebrow">{t('home.storyEyebrow')}</p>
           <h2 id="story-title" className="section-title">
-            {story.title}
+            {t('home.storyTitle')}
           </h2>
           <div className="story__body">
-            {story.paragraphs.map((p) => (
-              <p key={p.slice(0, 24)}>{p}</p>
-            ))}
+            <p>{t('home.storyP1')}</p>
+            <p>{t('home.storyP2')}</p>
+            <p>{t('home.storyP3')}</p>
           </div>
-          <p className="story__owners">{story.owners}</p>
+          <p className="story__owners">Roberta & Giuseppe</p>
         </div>
       </section>
 
       <section className="hospitality" aria-labelledby="hospitality-title">
         <div className="hospitality__inner">
-          <p className="eyebrow">{hospitality.eyebrow}</p>
+          <p className="eyebrow">{t('home.hospitalityEyebrow')}</p>
           <h2 id="hospitality-title" className="section-title">
-            {hospitality.title}
+            {t('home.hospitalityTitle')}
           </h2>
           <div className="hospitality__body">
-            {hospitality.paragraphs.map((p) => (
-              <p key={p.slice(0, 24)}>{p}</p>
-            ))}
+            <p>{t('home.hospitalityP1')}</p>
+            <p>{t('home.hospitalityP2')}</p>
+            <p>{t('home.hospitalityP3')}</p>
           </div>
           <ul className="hospitality__tags">
-            {hospitality.tags.map((tag) => (
-              <li key={tag}>{tag}</li>
-            ))}
+            <li>{t('home.tag1')}</li>
+            <li>{t('home.tag2')}</li>
           </ul>
         </div>
       </section>
@@ -220,49 +136,39 @@ export default function Home() {
       <section className="philosophy" aria-labelledby="philosophy-title">
         <div className="philosophy__inner">
           <p className="eyebrow" id="philosophy-title">
-            {philosophy.eyebrow}
+            {t('home.philosophyEyebrow')}
           </p>
           <blockquote className="philosophy__quote">
-            “{philosophy.quote}”
+            “{t('home.philosophyQuote')}”
           </blockquote>
-          <p className="philosophy__text">{philosophy.text}</p>
+          <p className="philosophy__text">{t('home.philosophyText')}</p>
         </div>
       </section>
 
       <section className="locations" id="vestigingen" aria-labelledby="locations-title">
         <div className="locations__intro">
-          <p className="eyebrow">{locations.eyebrow}</p>
+          <p className="eyebrow">{t('home.locationsEyebrow')}</p>
           <h2 id="locations-title" className="section-title">
-            {locations.title}
+            {t('home.locationsTitle')}
           </h2>
-          <p className="locations__lead">{locations.intro}</p>
+          <p className="locations__lead">{t('home.locationsIntro')}</p>
         </div>
 
         <div className="locations__list">
-          {locations.items.map((loc) => (
+          {locations.map((loc) => (
             <article key={loc.id} className="location" id={loc.id}>
               <div className="location__head">
                 <span className="location__number">{loc.number}</span>
                 <h3 className="location__name">{loc.name}</h3>
               </div>
-              {loc.highlight ? (
-                <p className="location__highlight">{loc.highlight}</p>
-              ) : null}
+              <p className="location__highlight">{loc.highlight}</p>
               <p className="location__summary">{loc.summary}</p>
               <p className="location__detail">{loc.detail}</p>
               <p className="location__hours">
-                <span>Openingstijden</span>
+                <span>{t('common.openingHours')}</span>
                 {loc.hours}
               </p>
-              <ul className="location__points">
-                {loc.points.map((point) => (
-                  <li key={point}>{point}</li>
-                ))}
-              </ul>
-              <Link
-                className="btn btn--primary"
-                to={`/reserveren?sede=${loc.id}`}
-              >
+              <Link className="btn btn--primary" to={`/reserveren?sede=${loc.id}`}>
                 {loc.reserveLabel}
               </Link>
             </article>
@@ -272,17 +178,17 @@ export default function Home() {
 
       <section className="reserve" id="reserveren" aria-labelledby="reserve-title">
         <div className="reserve__inner">
-          <p className="eyebrow">{reserve.eyebrow}</p>
+          <p className="eyebrow">{t('home.reserveEyebrow')}</p>
           <h2 id="reserve-title" className="section-title">
-            {reserve.title}
+            {t('home.reserveTitle')}
           </h2>
-          <p className="reserve__text">{reserve.text}</p>
+          <p className="reserve__text">{t('home.reserveText')}</p>
           <div className="home__actions">
             <Link className="btn btn--primary" to="/reserveren?sede=den-haag">
-              Reserveer Den Haag
+              {t('home.reserveDenHaag')}
             </Link>
             <Link className="btn btn--ghost" to="/reserveren?sede=leiden">
-              Reserveer Leiden
+              {t('home.reserveLeiden')}
             </Link>
           </div>
         </div>

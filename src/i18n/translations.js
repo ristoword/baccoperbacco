@@ -1,0 +1,452 @@
+export const LANGS = [
+  { code: 'nl', label: 'NL' },
+  { code: 'en', label: 'EN' },
+  { code: 'it', label: 'IT' },
+];
+
+export const translations = {
+  nl: {
+    nav: {
+      home: 'Home',
+      menu: 'Onze gerechten',
+      events: 'Events',
+      reserve: 'Reserveren',
+      forum: 'Forum',
+      feedback: 'Feedback',
+      aria: 'Hoofdmenu',
+    },
+    common: {
+      backHome: 'Terug naar home',
+      denHaag: 'Den Haag',
+      leiden: 'Leiden',
+      chooseLocation: 'Kies locatie…',
+      openingHours: 'Openingstijden',
+      loading: 'Laden…',
+      send: 'Versturen',
+      errorGeneric: 'Er ging iets mis. Probeer opnieuw.',
+      required: 'Vul alle verplichte velden in.',
+    },
+    home: {
+      headlineBefore: 'Authentieke Italiaanse keuken in een',
+      headlineEm: 'warme',
+      headlineAfter: 'familiesfeer',
+      description:
+        'Authentieke Italiaanse keuken in een warme familiesfeer, waar traditie, gastvrijheid en de smaken van thuis samenkomen in Den Haag en Leiden.',
+      ctaReserve: 'Reserveren',
+      ctaMenu: 'Onze gerechten',
+      scroll: 'Scroll',
+      storyEyebrow: 'Ons verhaal',
+      storyTitle: 'Een Italiaans familieverhaal met hart',
+      storyP1:
+        'Wij zijn Roberta en Giuseppe, een Italiaans koppel verbonden door onze passie voor traditioneel koken en de authentieke smaken van thuis.',
+      storyP2:
+        'In 2025 kregen wij de kans om Bacco Perbacco over te nemen, een Italiaans restaurant dat in 2009 is opgericht. Wij kozen ervoor om de identiteit van het restaurant voort te zetten en die te verrijken met een persoonlijkere touch.',
+      storyP3:
+        'Bij ons draait alles om oprechte gastvrijheid, huiselijke gerechten en de warmte van familie. Bacco Perbacco is een plek waar gasten zich welkom voelen, waar samen eten centraal staat en waar iedere maaltijd met liefde wordt bereid.',
+      hospitalityEyebrow: 'Familie restaurant',
+      hospitalityTitle: 'Italiaanse gastvrijheid met karakter',
+      hospitalityP1:
+        'Bacco Perbacco is meer dan een restaurant. Het is een familieplek waar de tafel centraal staat, waar gerechten met aandacht worden bereid en waar iedere gast de warmte van Italië voelt.',
+      hospitalityP2:
+        'De sfeer is stijlvol, warm en tijdloos. Geen afstandelijke luxe, maar een persoonlijke beleving waarin familie, smaak en gastvrijheid samenkomen.',
+      hospitalityP3:
+        'Roberta en Giuseppe brengen met liefde een keuken die geworteld is in traditie. Eerlijk, puur en gemaakt om samen van te genieten.',
+      tag1: 'Italiaanse beleving',
+      tag2: 'Warm & huiselijk',
+      philosophyEyebrow: 'Onze filosofie',
+      philosophyQuote:
+        'Echte Italiaanse keuken is eenvoudig, oprecht en vol herinneringen aan thuis.',
+      philosophyText:
+        'Op onze menukaart vind je gerechten die geïnspireerd zijn op de regionale keukens van Italië: pure ingrediënten, huiselijke smaken en recepten die verhalen vertellen. Dat is de ziel van Bacco Perbacco.',
+      locationsEyebrow: 'Onze vestigingen',
+      locationsTitle: 'Twee locaties, één Italiaanse familie',
+      locationsIntro:
+        'Beide vestigingen delen dezelfde warme signatuur, maar hebben ieder een eigen ritme en beleving. Overal staat dezelfde gastvrijheid centraal: eten, delen en samen genieten.',
+      denHaagSummary:
+        'In Den Haag beleef je Bacco Perbacco in een warme en elegante setting die perfect is voor lunch in het weekend en sfeervol dineren in de avond.',
+      denHaagDetail:
+        'Deze vestiging voelt klassiek en uitnodigend aan. Ideaal voor gasten die willen genieten van authentieke Italiaanse gerechten, goede wijn en een rustige, persoonlijke ambiance.',
+      denHaagHours: 'Ma - do: 17:00 - 22:00 · Vr - zo: 12:00 - 15:00 & 17:00 - 22:00',
+      denHaagHighlight: 'Lunch in het weekend · elegant dineren',
+      leidenSummary:
+        'In Leiden staat de avond centraal: intiem, warm en gastvrij. Een plek voor diners waar de tijd even vertraagt en Italië voelbaar dichtbij komt.',
+      leidenDetail:
+        'De vestiging in Leiden heeft dezelfde ziel als Den Haag, maar met een meer avondgerichte dynamiek. Hier draait alles om een sfeervolle, authentieke dinerervaring.',
+      leidenHours: 'Ma: gesloten · Di - zo: 17:00 - 22:00',
+      leidenHighlight: 'Intieme avondbeleving · warme sfeer',
+      reserveEyebrow: 'Reserveer jouw tafel',
+      reserveTitle: 'Kies je vestiging',
+      reserveText:
+        'Reserveer direct bij de juiste locatie voor een warme Italiaanse lunch of een sfeervol diner met de gastvrijheid van Roberta en Giuseppe.',
+      reserveDenHaag: 'Reserveer Den Haag',
+      reserveLeiden: 'Reserveer Leiden',
+    },
+    reserve: {
+      title: 'Reserveren',
+      text: 'Kies eerst je vestiging: Den Haag of Leiden. Het complete reserveringssysteem volgt binnenkort — work in progress.',
+      denHaagText: 'Warme, elegante setting — ideaal voor weekendlunch en sfeervol dineren.',
+      leidenText: 'Intieme avondbeleving — rustig, gastvrij en authentiek Italiaans.',
+      choose: 'Kies',
+      selected: 'Geselecteerd',
+      venue: 'Vestiging',
+      pickFirst: 'Selecteer Den Haag of Leiden om verder te gaan.',
+      date: 'Datum',
+      time: 'Tijd',
+      people: 'Personen',
+      name: 'Naam',
+      soon: 'binnenkort',
+      seeHome: 'Bekijk de vestigingen op de homepage',
+      wip: 'Work in progress',
+    },
+    menu: {
+      title: 'Onze gerechten',
+      text: 'De volledige menukaart met seizoensgerechten volgt hier. Dit is een eerste opzet — work in progress.',
+      soon: 'binnenkort',
+      wip: 'Work in progress',
+    },
+    events: {
+      title: 'Kalender events',
+      text: 'Hier verschijnen binnenkort alle avonden, workshops en speciale diners van Bacco Perbacco. Deze pagina is work in progress.',
+      wip: 'Work in progress',
+    },
+    forum: {
+      title: 'Forum',
+      text: 'Deel je ervaringen, vragen over de menukaart en tips voor een bezoek aan Den Haag of Leiden.',
+      empty: 'Nog geen berichten. Start het gesprek!',
+      by: 'door',
+      author: 'Naam',
+      postTitle: 'Titel',
+      message: 'Bericht',
+      placeholderAuthor: 'Jouw naam',
+      placeholderTitle: 'Waarover wil je praten?',
+      placeholderMessage: 'Schrijf iets voor de community…',
+      submit: 'Plaats bericht',
+      success: 'Bericht geplaatst!',
+      sending: 'Bezig…',
+    },
+    feedback: {
+      title: 'Feedback van gasten',
+      text: 'Deel je ervaring bij Bacco Perbacco. Jouw feedback helpt ons groeien.',
+      name: 'Naam',
+      location: 'Vestiging',
+      rating: 'Beoordeling',
+      message: 'Jouw feedback',
+      placeholderName: 'Jouw naam',
+      placeholderMessage: 'Vertel ons over je bezoek…',
+      submit: 'Verstuur feedback',
+      success: 'Bedankt! Je feedback is ontvangen.',
+      sending: 'Bezig…',
+      recent: 'Recente feedback',
+      empty: 'Nog geen feedback. Wees de eerste!',
+      stars: {
+        5: '5 — Uitstekend',
+        4: '4 — Zeer goed',
+        3: '3 — Goed',
+        2: '2 — Matig',
+        1: '1 — Slecht',
+      },
+    },
+    footer: {
+      line: 'Bacco Perbacco — Trattoria Italiana',
+    },
+  },
+  en: {
+    nav: {
+      home: 'Home',
+      menu: 'Our dishes',
+      events: 'Events',
+      reserve: 'Reserve',
+      forum: 'Forum',
+      feedback: 'Feedback',
+      aria: 'Main menu',
+    },
+    common: {
+      backHome: 'Back to home',
+      denHaag: 'The Hague',
+      leiden: 'Leiden',
+      chooseLocation: 'Choose location…',
+      openingHours: 'Opening hours',
+      loading: 'Loading…',
+      send: 'Send',
+      errorGeneric: 'Something went wrong. Please try again.',
+      required: 'Please fill in all required fields.',
+    },
+    home: {
+      headlineBefore: 'Authentic Italian cuisine in a',
+      headlineEm: 'warm',
+      headlineAfter: 'family atmosphere',
+      description:
+        'Authentic Italian cuisine in a warm family atmosphere, where tradition, hospitality and the flavours of home come together in The Hague and Leiden.',
+      ctaReserve: 'Reserve',
+      ctaMenu: 'Our dishes',
+      scroll: 'Scroll',
+      storyEyebrow: 'Our story',
+      storyTitle: 'An Italian family story with heart',
+      storyP1:
+        'We are Roberta and Giuseppe, an Italian couple bound by our passion for traditional cooking and the authentic flavours of home.',
+      storyP2:
+        'In 2025 we had the chance to take over Bacco Perbacco, an Italian restaurant founded in 2009. We chose to continue its identity and enrich it with a more personal touch.',
+      storyP3:
+        'For us everything revolves around sincere hospitality, homely dishes and the warmth of family. Bacco Perbacco is a place where guests feel welcome, where sharing a meal is central and every dish is prepared with love.',
+      hospitalityEyebrow: 'Family restaurant',
+      hospitalityTitle: 'Italian hospitality with character',
+      hospitalityP1:
+        'Bacco Perbacco is more than a restaurant. It is a family place where the table comes first, dishes are prepared with care and every guest feels the warmth of Italy.',
+      hospitalityP2:
+        'The atmosphere is stylish, warm and timeless. Not distant luxury, but a personal experience where family, flavour and hospitality meet.',
+      hospitalityP3:
+        'Roberta and Giuseppe lovingly bring a kitchen rooted in tradition. Honest, pure and made to enjoy together.',
+      tag1: 'Italian experience',
+      tag2: 'Warm & homely',
+      philosophyEyebrow: 'Our philosophy',
+      philosophyQuote:
+        'True Italian cuisine is simple, sincere and full of memories of home.',
+      philosophyText:
+        'On our menu you will find dishes inspired by the regional kitchens of Italy: pure ingredients, homely flavours and recipes that tell stories. That is the soul of Bacco Perbacco.',
+      locationsEyebrow: 'Our locations',
+      locationsTitle: 'Two locations, one Italian family',
+      locationsIntro:
+        'Both locations share the same warm signature, yet each has its own rhythm and atmosphere. Everywhere hospitality comes first: eating, sharing and enjoying together.',
+      denHaagSummary:
+        'In The Hague you experience Bacco Perbacco in a warm and elegant setting, perfect for weekend lunch and atmospheric evening dining.',
+      denHaagDetail:
+        'This location feels classic and inviting. Ideal for guests who want authentic Italian dishes, good wine and a calm, personal ambiance.',
+      denHaagHours: 'Mon - Thu: 17:00 - 22:00 · Fri - Sun: 12:00 - 15:00 & 17:00 - 22:00',
+      denHaagHighlight: 'Weekend lunch · elegant dining',
+      leidenSummary:
+        'In Leiden the evening takes centre stage: intimate, warm and welcoming. A place for dinners where time slows down and Italy feels close.',
+      leidenDetail:
+        'Leiden has the same soul as The Hague, with a more evening-focused rhythm. Here everything is about an atmospheric, authentic dining experience.',
+      leidenHours: 'Mon: closed · Tue - Sun: 17:00 - 22:00',
+      leidenHighlight: 'Intimate evenings · warm atmosphere',
+      reserveEyebrow: 'Reserve your table',
+      reserveTitle: 'Choose your location',
+      reserveText:
+        'Book directly at the right location for a warm Italian lunch or an atmospheric dinner with the hospitality of Roberta and Giuseppe.',
+      reserveDenHaag: 'Reserve The Hague',
+      reserveLeiden: 'Reserve Leiden',
+    },
+    reserve: {
+      title: 'Reserve',
+      text: 'First choose your location: The Hague or Leiden. The full booking system is coming soon — work in progress.',
+      denHaagText: 'Warm, elegant setting — ideal for weekend lunch and atmospheric dining.',
+      leidenText: 'Intimate evening experience — calm, welcoming and authentically Italian.',
+      choose: 'Choose',
+      selected: 'Selected',
+      venue: 'Location',
+      pickFirst: 'Select The Hague or Leiden to continue.',
+      date: 'Date',
+      time: 'Time',
+      people: 'Guests',
+      name: 'Name',
+      soon: 'coming soon',
+      seeHome: 'See the locations on the homepage',
+      wip: 'Work in progress',
+    },
+    menu: {
+      title: 'Our dishes',
+      text: 'The full seasonal menu will appear here. This is a first outline — work in progress.',
+      soon: 'coming soon',
+      wip: 'Work in progress',
+    },
+    events: {
+      title: 'Events calendar',
+      text: 'Soon you will find all evenings, workshops and special dinners of Bacco Perbacco here. This page is work in progress.',
+      wip: 'Work in progress',
+    },
+    forum: {
+      title: 'Forum',
+      text: 'Share experiences, menu questions and tips for a visit to The Hague or Leiden.',
+      empty: 'No posts yet. Start the conversation!',
+      by: 'by',
+      author: 'Name',
+      postTitle: 'Title',
+      message: 'Message',
+      placeholderAuthor: 'Your name',
+      placeholderTitle: 'What would you like to talk about?',
+      placeholderMessage: 'Write something for the community…',
+      submit: 'Post message',
+      success: 'Message posted!',
+      sending: 'Sending…',
+    },
+    feedback: {
+      title: 'Guest feedback',
+      text: 'Share your experience at Bacco Perbacco. Your feedback helps us grow.',
+      name: 'Name',
+      location: 'Location',
+      rating: 'Rating',
+      message: 'Your feedback',
+      placeholderName: 'Your name',
+      placeholderMessage: 'Tell us about your visit…',
+      submit: 'Send feedback',
+      success: 'Thank you! Your feedback has been received.',
+      sending: 'Sending…',
+      recent: 'Recent feedback',
+      empty: 'No feedback yet. Be the first!',
+      stars: {
+        5: '5 — Excellent',
+        4: '4 — Very good',
+        3: '3 — Good',
+        2: '2 — Fair',
+        1: '1 — Poor',
+      },
+    },
+    footer: {
+      line: 'Bacco Perbacco — Trattoria Italiana',
+    },
+  },
+  it: {
+    nav: {
+      home: 'Home',
+      menu: 'I nostri piatti',
+      events: 'Eventi',
+      reserve: 'Prenota',
+      forum: 'Forum',
+      feedback: 'Feedback',
+      aria: 'Menu principale',
+    },
+    common: {
+      backHome: 'Torna alla home',
+      denHaag: 'L\'Aia',
+      leiden: 'Leiden',
+      chooseLocation: 'Scegli sede…',
+      openingHours: 'Orari',
+      loading: 'Caricamento…',
+      send: 'Invia',
+      errorGeneric: 'Qualcosa è andato storto. Riprova.',
+      required: 'Compila tutti i campi obbligatori.',
+    },
+    home: {
+      headlineBefore: 'Cucina italiana autentica in un\'',
+      headlineEm: 'atmosfera',
+      headlineAfter: 'familiare e calda',
+      description:
+        'Cucina italiana autentica in un\'atmosfera familiare e calda, dove tradizione, ospitalità e i sapori di casa si incontrano a L\'Aia e Leiden.',
+      ctaReserve: 'Prenota',
+      ctaMenu: 'I nostri piatti',
+      scroll: 'Scorri',
+      storyEyebrow: 'La nostra storia',
+      storyTitle: 'Una storia di famiglia italiana con il cuore',
+      storyP1:
+        'Siamo Roberta e Giuseppe, una coppia italiana unita dalla passione per la cucina tradizionale e i sapori autentici di casa.',
+      storyP2:
+        'Nel 2025 abbiamo avuto la possibilità di rilevare Bacco Perbacco, un ristorante italiano fondato nel 2009. Abbiamo scelto di continuare la sua identità arricchendola con un tocco più personale.',
+      storyP3:
+        'Per noi tutto ruota intorno all\'ospitalità sincera, ai piatti casalinghi e al calore della famiglia. Bacco Perbacco è un luogo dove gli ospiti si sentono i benvenuti, dove condividere il pasto è centrale e ogni piatto è preparato con amore.',
+      hospitalityEyebrow: 'Ristorante di famiglia',
+      hospitalityTitle: 'Ospitalità italiana con carattere',
+      hospitalityP1:
+        'Bacco Perbacco è più di un ristorante. È un luogo di famiglia dove la tavola viene prima di tutto, i piatti sono preparati con cura e ogni ospite sente il calore dell\'Italia.',
+      hospitalityP2:
+        'L\'atmosfera è elegante, calda e senza tempo. Non un lusso distante, ma un\'esperienza personale in cui famiglia, gusto e ospitalità si incontrano.',
+      hospitalityP3:
+        'Roberta e Giuseppe portano con amore una cucina radicata nella tradizione. Onesta, pura e fatta per essere gustata insieme.',
+      tag1: 'Esperienza italiana',
+      tag2: 'Caldo & familiare',
+      philosophyEyebrow: 'La nostra filosofia',
+      philosophyQuote:
+        'La vera cucina italiana è semplice, sincera e piena di ricordi di casa.',
+      philosophyText:
+        'Nel nostro menu trovi piatti ispirati alle cucine regionali d\'Italia: ingredienti puri, sapori casalinghi e ricette che raccontano storie. Questa è l\'anima di Bacco Perbacco.',
+      locationsEyebrow: 'Le nostre sedi',
+      locationsTitle: 'Due sedi, una famiglia italiana',
+      locationsIntro:
+        'Entrambe le sedi condividono la stessa firma calda, ma ognuna ha il proprio ritmo e atmosfera. Ovunque l\'ospitalità viene prima: mangiare, condividere e godersi il momento insieme.',
+      denHaagSummary:
+        'All\'Aia vivi Bacco Perbacco in un\'ambientazione calda ed elegante, perfetta per il pranzo del weekend e una cena suggestiva.',
+      denHaagDetail:
+        'Questa sede è classica e accogliente. Ideale per chi vuole piatti italiani autentici, buon vino e un\'atmosfera tranquilla e personale.',
+      denHaagHours: 'Lun - Gio: 17:00 - 22:00 · Ven - Dom: 12:00 - 15:00 & 17:00 - 22:00',
+      denHaagHighlight: 'Pranzo nel weekend · cena elegante',
+      leidenSummary:
+        'A Leiden la sera è al centro: intima, calda e accogliente. Un luogo per cene in cui il tempo rallenta e l\'Italia si sente vicina.',
+      leidenDetail:
+        'Leiden ha la stessa anima de L\'Aia, con un ritmo più serale. Qui tutto ruota intorno a un\'esperienza di cena autentica e suggestiva.',
+      leidenHours: 'Lun: chiuso · Mar - Dom: 17:00 - 22:00',
+      leidenHighlight: 'Sere intime · atmosfera calda',
+      reserveEyebrow: 'Prenota il tuo tavolo',
+      reserveTitle: 'Scegli la sede',
+      reserveText:
+        'Prenota direttamente nella sede giusta per un pranzo italiano caldo o una cena suggestiva con l\'ospitalità di Roberta e Giuseppe.',
+      reserveDenHaag: 'Prenota L\'Aia',
+      reserveLeiden: 'Prenota Leiden',
+    },
+    reserve: {
+      title: 'Prenota',
+      text: 'Scegli prima la sede: L\'Aia o Leiden. Il sistema di prenotazione completo arriverà presto — work in progress.',
+      denHaagText: 'Ambiente caldo ed elegante — ideale per pranzo nel weekend e cene suggestivi.',
+      leidenText: 'Esperienza serale intima — calma, accogliente e autenticamente italiana.',
+      choose: 'Scegli',
+      selected: 'Selezionato',
+      venue: 'Sede',
+      pickFirst: 'Seleziona L\'Aia o Leiden per continuare.',
+      date: 'Data',
+      time: 'Ora',
+      people: 'Persone',
+      name: 'Nome',
+      soon: 'a breve',
+      seeHome: 'Vedi le sedi nella homepage',
+      wip: 'Work in progress',
+    },
+    menu: {
+      title: 'I nostri piatti',
+      text: 'Il menu completo di stagione apparirà qui. Questa è una prima bozza — work in progress.',
+      soon: 'a breve',
+      wip: 'Work in progress',
+    },
+    events: {
+      title: 'Calendario eventi',
+      text: 'Presto troverai qui tutte le serate, i workshop e le cene speciali di Bacco Perbacco. Questa pagina è work in progress.',
+      wip: 'Work in progress',
+    },
+    forum: {
+      title: 'Forum',
+      text: 'Condividi esperienze, domande sul menu e consigli per una visita a L\'Aia o Leiden.',
+      empty: 'Ancora nessun messaggio. Inizia la conversazione!',
+      by: 'di',
+      author: 'Nome',
+      postTitle: 'Titolo',
+      message: 'Messaggio',
+      placeholderAuthor: 'Il tuo nome',
+      placeholderTitle: 'Di cosa vuoi parlare?',
+      placeholderMessage: 'Scrivi qualcosa per la community…',
+      submit: 'Pubblica messaggio',
+      success: 'Messaggio pubblicato!',
+      sending: 'Invio…',
+    },
+    feedback: {
+      title: 'Feedback dei clienti',
+      text: 'Condividi la tua esperienza da Bacco Perbacco. Il tuo feedback ci aiuta a crescere.',
+      name: 'Nome',
+      location: 'Sede',
+      rating: 'Valutazione',
+      message: 'Il tuo feedback',
+      placeholderName: 'Il tuo nome',
+      placeholderMessage: 'Raccontaci della tua visita…',
+      submit: 'Invia feedback',
+      success: 'Grazie! Abbiamo ricevuto il tuo feedback.',
+      sending: 'Invio…',
+      recent: 'Feedback recenti',
+      empty: 'Ancora nessun feedback. Sii il primo!',
+      stars: {
+        5: '5 — Eccellente',
+        4: '4 — Molto buono',
+        3: '3 — Buono',
+        2: '2 — Sufficiente',
+        1: '1 — Scarso',
+      },
+    },
+    footer: {
+      line: 'Bacco Perbacco — Trattoria Italiana',
+    },
+  },
+};
+
+export function t(lang, path) {
+  const parts = path.split('.');
+  let cur = translations[lang] || translations.nl;
+  for (const part of parts) {
+    cur = cur?.[part];
+  }
+  return cur ?? path;
+}
