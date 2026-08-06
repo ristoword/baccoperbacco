@@ -18,6 +18,7 @@ export default function Header() {
     { to: '/reserveren', label: t('nav.reserve') },
     { to: '/forum', label: t('nav.forum') },
     { to: '/feedback', label: t('nav.feedback') },
+    { to: '/contatti', label: t('nav.contacts') },
   ];
 
   const currentLang = langs.find((item) => item.code === lang) || langs[0];

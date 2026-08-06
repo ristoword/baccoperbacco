@@ -7,6 +7,7 @@ import Forum from './components/pages/Forum.jsx';
 import Feedback from './components/pages/Feedback.jsx';
 import Events from './components/pages/Events.jsx';
 import Photos from './components/pages/Photos.jsx';
+import Contacts from './components/pages/Contacts.jsx';
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="/forum" element={<Forum />} />
           <Route path="/feedback" element={<Feedback />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/contatti" element={<Contacts />} />
         </Route>
       </Routes>
     </BrowserRouter>

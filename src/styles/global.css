@@ -1500,6 +1500,96 @@ button {
   }
 }
 
+.contacts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.contact-card {
+  text-align: left;
+  padding: 1.35rem 1.2rem;
+  border: 1px solid rgba(244, 239, 230, 0.12);
+  background: rgba(244, 239, 230, 0.03);
+}
+
+.contact-card__label {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--wine-glow);
+  margin-bottom: 0.45rem;
+}
+
+.contact-card h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.45rem;
+  margin-bottom: 0.55rem;
+}
+
+.contact-card p {
+  font-weight: 300;
+  color: var(--cream-muted);
+  line-height: 1.55;
+}
+
+.contact-card__note {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.contacts-wip {
+  text-align: center;
+  padding-top: 0.5rem;
+}
+
+.contacts-wip h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.contacts-wip ul {
+  list-style: none;
+  display: grid;
+  gap: 0.65rem;
+  max-width: 24rem;
+  margin: 0 auto 1rem;
+  text-align: left;
+}
+
+.contacts-wip li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid rgba(244, 239, 230, 0.1);
+  color: var(--cream-muted);
+}
+
+.contacts-wip em {
+  font-style: normal;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--wine-glow);
+}
+
+.contacts-wip > p {
+  font-weight: 300;
+  color: var(--cream-muted);
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 700px) {
+  .contacts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .page-hero {
   text-align: center;
   margin-bottom: 2rem;
