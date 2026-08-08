@@ -1464,6 +1464,18 @@ button {
   transition: transform 0.55s var(--ease-out);
 }
 
+.photo-card__placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 12rem;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  text-align: center;
+  color: var(--cream-muted);
+  background: rgba(244, 239, 230, 0.05);
+}
+
 .photo-card:hover .photo-card__media img {
   transform: scale(1.04);
 }
@@ -1701,5 +1713,25 @@ button {
 .feedback-item time {
   font-size: 0.78rem;
   color: var(--cream-faint);
+}
+
+.feedback-item__reply {
+  margin: 0.65rem 0;
+  padding: 0.75rem 0.85rem;
+  border-left: 3px solid var(--wine);
+  background: rgba(139, 38, 53, 0.12);
+}
+
+.feedback-item__reply strong {
+  display: block;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--wine-glow);
+  margin-bottom: 0.35rem;
+}
+
+.feedback-item__reply p {
+  margin-bottom: 0;
 }
 

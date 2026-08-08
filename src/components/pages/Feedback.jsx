@@ -148,6 +148,12 @@ export default function Feedback() {
                 </span>
               </div>
               <p>{item.message}</p>
+              {item.reply ? (
+                <div className="feedback-item__reply">
+                  <strong>{t('feedback.ownerReply')}</strong>
+                  <p>{item.reply}</p>
+                </div>
+              ) : null}
               <time dateTime={item.createdAt}>
                 {new Date(item.createdAt).toLocaleString(lang)}
               </time>

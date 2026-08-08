@@ -129,6 +129,11 @@ export const translations = {
       eyebrow: 'Agenda',
       title: 'Kalender events',
       text: 'Avonden met karakter bij Bacco Perbacco — muziek, smaak en ontmoeting.',
+      meta: {
+        when: 'Tijd',
+        where: 'Locatie',
+        price: 'Prijs',
+      },
       tango: {
         alt: 'Flyer Il Salotto del Tango — 23 augustus bij Bacco Perbacco Leiden',
         kicker: 'Speciale avond · Leiden',
@@ -210,6 +215,7 @@ export const translations = {
       sending: 'Bezig…',
       recent: 'Recente feedback',
       empty: 'Nog geen feedback. Wees de eerste!',
+      ownerReply: 'Antwoord van Bacco Perbacco',
       stars: {
         5: '5 — Uitstekend',
         4: '4 — Zeer goed',
@@ -346,6 +352,11 @@ export const translations = {
       eyebrow: 'Agenda',
       title: 'Events calendar',
       text: 'Evenings with character at Bacco Perbacco — music, flavour and connection.',
+      meta: {
+        when: 'Time',
+        where: 'Location',
+        price: 'Price',
+      },
       tango: {
         alt: 'Flyer Il Salotto del Tango — 23 August at Bacco Perbacco Leiden',
         kicker: 'Special evening · Leiden',
@@ -427,6 +438,7 @@ export const translations = {
       sending: 'Sending…',
       recent: 'Recent feedback',
       empty: 'No feedback yet. Be the first!',
+      ownerReply: 'Reply from Bacco Perbacco',
       stars: {
         5: '5 — Excellent',
         4: '4 — Very good',
@@ -563,6 +575,11 @@ export const translations = {
       eyebrow: 'Agenda',
       title: 'Calendario eventi',
       text: 'Serate con carattere da Bacco Perbacco — musica, gusto e incontro.',
+      meta: {
+        when: 'Orario',
+        where: 'Luogo',
+        price: 'Prezzo',
+      },
       tango: {
         alt: 'Locandina Il Salotto del Tango — 23 agosto da Bacco Perbacco Leiden',
         kicker: 'Serata speciale · Leiden',
@@ -644,6 +661,7 @@ export const translations = {
       sending: 'Invio…',
       recent: 'Feedback recenti',
       empty: 'Ancora nessun feedback. Sii il primo!',
+      ownerReply: 'Risposta di Bacco Perbacco',
       stars: {
         5: '5 — Eccellente',
         4: '4 — Molto buono',

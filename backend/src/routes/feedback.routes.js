@@ -47,6 +47,8 @@ router.post('/', (req, res) => {
     message,
     language,
     createdAt: new Date().toISOString(),
+    reply: null,
+    repliedAt: null,
   };
 
   data.items.push(item);
