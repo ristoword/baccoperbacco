@@ -1,10 +1,9 @@
 import fs from 'fs';
 import path from 'path';
 import multer from 'multer';
-import { fileURLToPath } from 'url';
+import config from '../config/index.js';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-export const publicDir = path.resolve(__dirname, '../../../public');
+export const uploadsRoot = config.uploadsDir;
 
 const ALLOWED = new Set([
   'image/jpeg',
@@ -14,7 +13,7 @@ const ALLOWED = new Set([
 ]);
 
 function uploadDir(folder) {
-  const dir = path.join(publicDir, 'uploads', folder);
+  const dir = path.join(uploadsRoot, folder);
   fs.mkdirSync(dir, { recursive: true });
   return dir;
 }

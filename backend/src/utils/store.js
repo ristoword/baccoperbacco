@@ -1,9 +1,8 @@
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
+import config from '../config/index.js';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const dataDir = path.resolve(__dirname, '../../data');
+const dataDir = config.dataDir;
 
 function ensureDataDir() {
   if (!fs.existsSync(dataDir)) {
