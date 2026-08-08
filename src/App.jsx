@@ -9,6 +9,7 @@ import Feedback from './components/pages/Feedback.jsx';
 import Events from './components/pages/Events.jsx';
 import Photos from './components/pages/Photos.jsx';
 import Contacts from './components/pages/Contacts.jsx';
+import SeoGuide from './components/pages/SeoGuide.jsx';
 import AdminLogin from './admin/AdminLogin.jsx';
 import AdminLayout from './admin/AdminLayout.jsx';
 import AdminDashboardHome from './admin/AdminDashboardHome.jsx';
@@ -41,6 +42,7 @@ export default function App() {
             <Route path="/feedback" element={<Feedback />} />
             <Route path="/events" element={<Events />} />
             <Route path="/contatti" element={<Contacts />} />
+            <Route path="/italiaanse-restaurants-den-haag-leiden" element={<SeoGuide />} />
           </Route>
         </Routes>
       </BrowserRouter>

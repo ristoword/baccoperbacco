@@ -226,6 +226,7 @@ export const translations = {
     },
     footer: {
       line: 'Bacco Perbacco — Trattoria Italiana',
+      seoGuide: 'Gids: beste Italiaanse restaurants Den Haag & Leiden',
     },
   },
   en: {
@@ -449,6 +450,7 @@ export const translations = {
     },
     footer: {
       line: 'Bacco Perbacco — Trattoria Italiana',
+      seoGuide: 'Guide: best Italian restaurants The Hague & Leiden',
     },
   },
   it: {
@@ -672,6 +674,7 @@ export const translations = {
     },
     footer: {
       line: 'Bacco Perbacco — Trattoria Italiana',
+      seoGuide: 'Guida: migliori ristoranti italiani Den Haag e Leiden',
     },
   },
 };

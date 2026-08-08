@@ -13,6 +13,9 @@ export default function Footer() {
           <span aria-hidden="true">·</span>
           <Link to="/reserveren?sede=leiden">{t('common.leiden')}</Link>
         </p>
+        <p className="site-footer__seo">
+          <Link to="/italiaanse-restaurants-den-haag-leiden">{t('footer.seoGuide')}</Link>
+        </p>
         <p className="site-footer__note">Roberta & Giuseppe</p>
       </div>
     </footer>

@@ -1735,3 +1735,148 @@ button {
   margin-bottom: 0;
 }
 
+/* ─── SEO guide page ─── */
+
+.seo-guide__hero .seo-guide__lead {
+  max-width: 42rem;
+  margin: 0 auto 1rem;
+  text-align: left;
+  line-height: 1.65;
+  color: var(--cream-muted);
+  font-weight: 300;
+}
+
+.seo-guide__section {
+  margin-top: 2.75rem;
+  text-align: left;
+}
+
+.seo-guide__section h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  margin-bottom: 0.85rem;
+  color: var(--cream);
+}
+
+.seo-guide__section h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  margin-bottom: 0.35rem;
+  color: var(--rose);
+}
+
+.seo-guide__section p {
+  line-height: 1.65;
+  color: var(--cream-muted);
+  margin-bottom: 0.85rem;
+  font-weight: 300;
+}
+
+.seo-guide__muted {
+  margin-bottom: 1.25rem !important;
+}
+
+.seo-guide__cards {
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr));
+}
+
+.seo-guide__card {
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(244, 239, 230, 0.12);
+  background: rgba(28, 22, 25, 0.45);
+  border-radius: 2px;
+}
+
+.seo-guide__card p {
+  margin-bottom: 0;
+  font-size: 0.92rem;
+}
+
+.seo-guide__list {
+  padding-left: 1.15rem;
+  color: var(--cream-muted);
+  font-weight: 300;
+  line-height: 1.65;
+}
+
+.seo-guide__list li + li {
+  margin-top: 0.5rem;
+}
+
+.seo-guide__highlight {
+  padding: 1.25rem 1.35rem;
+  border: 1px solid rgba(160, 77, 108, 0.35);
+  background: rgba(122, 51, 79, 0.12);
+}
+
+.seo-guide__faq {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.seo-guide__faq-item dt {
+  font-weight: 500;
+  color: var(--cream);
+  margin-bottom: 0.35rem;
+}
+
+.seo-guide__faq-item dd {
+  margin: 0;
+  color: var(--cream-muted);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.seo-guide__cta {
+  margin-top: 3rem;
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(244, 239, 230, 0.1);
+}
+
+.seo-guide__cta h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  margin-bottom: 0.75rem;
+}
+
+.seo-guide__cta p {
+  color: var(--cream-muted);
+  max-width: 32rem;
+  margin: 0 auto 1.25rem;
+  line-height: 1.6;
+}
+
+.seo-guide__cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.seo-guide__updated {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cream-faint);
+}
+
+.site-footer__seo {
+  margin-top: 0.65rem;
+  font-size: 0.82rem;
+}
+
+.site-footer__seo a {
+  color: var(--cream-muted);
+  border-bottom: 1px solid rgba(244, 239, 230, 0.2);
+}
+
+.site-footer__seo a:hover {
+  color: var(--cream);
+}
+
