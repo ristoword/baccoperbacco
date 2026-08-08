@@ -13,3 +13,5 @@ coverage/
 .vite/
 backend/data/*.json
 !backend/data/.gitkeep
+backups/*
+!backups/.gitkeep

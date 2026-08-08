@@ -9,7 +9,11 @@
     "dev:frontend": "npm run dev --prefix src",
     "install:all": "npm install && npm install --prefix backend && npm install --prefix src",
     "build": "npm run build --prefix src",
-    "start": "npm run start --prefix backend"
+    "start": "npm run start --prefix backend",
+    "backup:local": "node scripts/backup-persist.js --local",
+    "backup:railway": "node scripts/backup-persist.js --railway",
+    "restore:local": "node scripts/restore-persist.js --local",
+    "restore:railway": "node scripts/restore-persist.js --railway"
   },
   "devDependencies": {
     "concurrently": "^9.1.2"
