@@ -1,17 +1,27 @@
 import { Router } from 'express';
 import { readJson, writeJson, createId } from '../utils/store.js';
+import { defaultFeedback } from '../defaults/feedbackDefaults.js';
 
 const router = Router();
 const FILE = 'feedback.json';
 const EMPTY = { items: [] };
 const LOCATIONS = new Set(['den-haag', 'leiden']);
 
+function ensureFeedback() {
+  const data = readJson(FILE, null);
+  if (!data?.items?.length) {
+    writeJson(FILE, structuredClone(defaultFeedback));
+    return structuredClone(defaultFeedback);
+  }
+  return data;
+}
+
 function sanitize(text = '', max = 2000) {
   return String(text).trim().slice(0, max);
 }
 
 router.get('/', (_req, res) => {
-  const data = readJson(FILE, EMPTY);
+  const data = ensureFeedback();
   const items = [...data.items]
     .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
     .slice(0, 50);
@@ -38,7 +48,7 @@ router.post('/', (req, res) => {
     return res.status(400).json({ success: false, message: 'Message is required' });
   }
 
-  const data = readJson(FILE, EMPTY);
+  const data = ensureFeedback();
   const item = {
     id: createId(),
     name,
